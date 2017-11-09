@@ -22,7 +22,7 @@ module.exports.getConnection = function(callback) {
     callback(null, instanceMongoDB);
   } else {
     var server = new mongodb.Server("localhost", 27017, {auto_reconnect: true});
-    var db = new mongodb.Db("patinoires", server, {safe: true});
+    var db = new mongodb.Db("glissades", server, {safe: true});
     if (!db.openCalled) {
       db.open(function(err, db) {
         if (err) {
